@@ -22,29 +22,56 @@
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1 class="fade-in">Find Your Affordable Home in Edmonton</h1>
-    <p class="fade-in">Modern, comfortable, government-subsidized apartments.</p>
-    <a href="#listings" class="btn-hero fade-in">Browse Listings</a>
+    <h1>Find Your Affordable Home in Edmonton</h1>
+    <p>Comfortable, modern, government-subsidized apartments.</p>
+    <a href="#listings" class="btn-hero">Browse Listings</a>
   </div>
 </section>
 
 <section id="listings" class="container listings">
-  <!-- Property Card -->
-  <div class="listing-card" data-title="1 Bedroom Apartment" data-address="123 Jasper Ave, Edmonton" data-price="$950/month" data-images="images/apartment1.jpg,images/apartment1b.jpg" data-description="Cozy 1 bedroom apartment located downtown with modern amenities.">
-    <img src="images/apartment1.jpg" alt="1 Bedroom Downtown">
+  <div class="listing-card" data-title="1 Bedroom Apartment" data-address="123 Jasper Ave, Edmonton" data-price="$950/month" data-images="images/apartment1.jpg,images/apartment1b.jpg" data-description="Cozy 1 bedroom apartment in downtown with modern amenities.">
+    <img src="images/apartment1.jpg" alt="1 Bedroom">
     <div class="listing-info">
       <h3>1 Bedroom Apartment</h3>
       <p>123 Jasper Ave</p>
       <p>$950/month</p>
     </div>
   </div>
-  <div class="listing-card" data-title="2 Bedroom Apartment" data-address="456 104 St, Edmonton" data-price="$1,200/month" data-images="images/apartment2.jpg,images/apartment2b.jpg" data-description="Spacious 2 bedroom apartment near public transit and shopping.">
-    <img src="images/apartment2.jpg" alt="2 Bedroom Downtown">
+  <div class="listing-card" data-title="2 Bedroom Apartment" data-address="456 104 St, Edmonton" data-price="$1,200/month" data-images="images/apartment2.jpg,images/apartment2b.jpg" data-description="Spacious 2 bedroom apartment near transit and shops.">
+    <img src="images/apartment2.jpg" alt="2 Bedroom">
     <div class="listing-info">
       <h3>2 Bedroom Apartment</h3>
       <p>456 104 St</p>
       <p>$1,200/month</p>
     </div>
   </div>
-  <div class="listing-card" data-title="3 Bedroom Apartment" data-address="789 102 Ave, Edmonton" data-price="$1,500/month" data-images="images/apartment3.jpg,images/apartment3b.jpg" data-description="Modern 3 bedroom apartment perfect for families, downtown location.">
-    <img src="images/apartment3.jpg" alt="3 Bedroom Downtown"
+  <div class="listing-card" data-title="3 Bedroom Apartment" data-address="789 102 Ave, Edmonton" data-price="$1,500/month" data-images="images/apartment3.jpg,images/apartment3b.jpg" data-description="Modern 3 bedroom apartment perfect for families, downtown.">
+    <img src="images/apartment3.jpg" alt="3 Bedroom">
+    <div class="listing-info">
+      <h3>3 Bedroom Apartment</h3>
+      <p>789 102 Ave</p>
+      <p>$1,500/month</p>
+    </div>
+  </div>
+</section>
+
+<div id="property-modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-address"></p>
+    <p id="modal-price"></p>
+    <p id="modal-description"></p>
+    <div id="modal-images" class="modal-images"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 HomeBridge. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
