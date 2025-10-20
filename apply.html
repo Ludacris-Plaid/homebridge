@@ -2,38 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apply Now - HomeBridge</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
-<img src="assets/logo.svg" alt="HomeBridge Logo" class="logo">
-<nav>
-<a href="index.html">Home</a>
-<a href="vision.html">Our Vision</a>
-<a href="listings.html">Current Listings</a>
-<a href="apply.html">Apply Now</a>
-</nav>
+  <div class="container header-container">
+    <img src="assets/logo.svg" alt="HomeBridge Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="vision.html">Our Vision</a>
+      <a href="listings.html">Listings</a>
+      <a href="apply.html" class="btn-cta">Apply Now</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-<h2>Application Form</h2>
-<form action="/api/apply" method="POST">
-<input type="text" name="full_name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<input type="text" name="current_address" placeholder="Current Address" required>
-<select name="apartment_type" required>
-<option value="">Select Apartment Type</option>
-<option value="1br">1 Bedroom</option>
-<option value="2br">2 Bedroom</option>
-<option value="3br">3 Bedroom</option>
-</select>
-<textarea name="additional_info" placeholder="Additional Information (optional)"></textarea>
-<button type="submit">Submit Application</button>
-</form>
+<div class="container page-content">
+  <h2>Application Form</h2>
+  <form id="applicationForm">
+    <input type="text" name="full_name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="current_address" placeholder="Current Address" required>
+    <select name="apartment_type" required>
+      <option value="">Select Apartment Type</option>
+      <option value="1br">1 Bedroom</option>
+      <option value="2br">2 Bedroom</option>
+      <option value="3br">3 Bedroom</option>
+    </select>
+    <textarea name="additional_info" placeholder="Additional Information (optional)"></textarea>
+    <button type="submit">Submit Application</button>
+    <p id="form-status"></p>
+  </form>
 </div>
 
-<footer>&copy; 2025 HomeBridge. All rights reserved.</footer>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 HomeBridge. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('applicationForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const status = document.getElementById('form-status');
+  status.textContent = 'Sending...';
+
+  try{
+    const res = await fetch('/api/apply', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    const result = await res.json();
+    status.textContent = result.message;
+    form.reset();
+  }catch(err){
+    status.textContent = 'Error sending application.';
+  }
+});
+</script>
 </body>
 </html>
