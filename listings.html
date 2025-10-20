@@ -16,61 +16,33 @@
 </nav>
 </header>
 
-<div class="container">
-<h2>Current Listings</h2>
-<div class="listings">
-
-<div class="listing">
-<img src="images/apartment1.jpg" alt="1 Bedroom Apartment">
-<svg class="roof" viewBox="0 0 50 25"><polygon points="0,25 25,0 50,25" fill="#fcd116"/></svg>
-<div class="listing-content">
-<h3>1 Bedroom Apartment - Downtown</h3>
-<p>123 Jasper Ave, Edmonton</p>
-<p>$950/month — Government Subsidized</p>
-</div>
-</div>
-
-<div class="listing">
-<img src="images/apartment2.jpg" alt="2 Bedroom Apartment">
-<svg class="roof" viewBox="0 0 50 25"><polygon points="0,25 25,0 50,25" fill="#fcd116"/></svg>
-<div class="listing-content">
-<h3>2 Bedroom Apartment - Downtown</h3>
-<p>456 104 St, Edmonton</p>
-<p>$1,200/month — Government Subsidized</p>
-</div>
-</div>
-
-<div class="listing">
-<img src="images/apartment3.jpg" alt="3 Bedroom Apartment">
-<svg class="roof" viewBox="0 0 50 25"><polygon points="0,25 25,0 50,25" fill="#fcd116"/></svg>
-<div class="listing-content">
-<h3>3 Bedroom Apartment - Downtown</h3>
-<p>789 102 Ave, Edmonton</p>
-<p>$1,500/month — Government Subsidized</p>
-</div>
-</div>
-
-</div>
+<div class="container listings">
+  <a href="property1.html" class="listing-card">
+    <img src="images/apartment1.jpg" alt="1 Bedroom Downtown">
+    <div class="listing-info">
+      <h3>1 Bedroom Apartment</h3>
+      <p>123 Jasper Ave, Edmonton</p>
+      <p>$950/month</p>
+    </div>
+  </a>
+  <a href="property2.html" class="listing-card">
+    <img src="images/apartment2.jpg" alt="2 Bedroom Downtown">
+    <div class="listing-info">
+      <h3>2 Bedroom Apartment</h3>
+      <p>456 104 St, Edmonton</p>
+      <p>$1,200/month</p>
+    </div>
+  </a>
+  <a href="property3.html" class="listing-card">
+    <img src="images/apartment3.jpg" alt="3 Bedroom Downtown">
+    <div class="listing-info">
+      <h3>3 Bedroom Apartment</h3>
+      <p>789 102 Ave, Edmonton</p>
+      <p>$1,500/month</p>
+    </div>
+  </a>
 </div>
 
 <footer>&copy; 2025 HomeBridge. All rights reserved.</footer>
-
-<script>
-function fadeInOnScroll() {
-  const listings = document.querySelectorAll('.listing');
-  const triggerBottom = window.innerHeight / 5 * 4;
-  listings.forEach((listing, index) => {
-    const listingTop = listing.getBoundingClientRect().top;
-    if(listingTop < triggerBottom) {
-      setTimeout(() => {
-        listing.style.opacity = '1';
-        listing.style.transform = 'translateY(0)';
-      }, index * 150);
-    }
-  });
-}
-window.addEventListener('scroll', fadeInOnScroll);
-window.addEventListener('load', fadeInOnScroll);
-</script>
 </body>
 </html>
